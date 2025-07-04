@@ -15,7 +15,7 @@ Sends them to a Node.js backend
 Performs math operations in Java
 Returns the result back to frontend
 Stores inputs & results in MongoDB
-Supports light/dark mode, history, localStorage
+Supports light/dark mode, history, clear history, localStorage
 
 ## 📁 Folder Structure
 
