@@ -1,0 +1,39 @@
+<div class="calc-container" [class.dark]="isDark">
+  <!-- 🔘 Compact Dark Toggle -->
+  <button class="dark-toggle" (click)="toggleDark()" title="Toggle Dark Mode">
+    {{ isDark ? '☀' : '🌙' }}
+  </button>
+
+  <h2>Smart Calculator</h2>
+
+  <input type="number" [(ngModel)]="num1" placeholder="Enter first number" />
+  <input type="number" [(ngModel)]="num2" placeholder="Enter second number" />
+
+  <select [(ngModel)]="operation">
+    <option value="" selected disabled>🔘 Select Operation</option>
+    <option value="add">➕ Addition</option>
+    <option value="subtract">➖ Subtraction</option>
+    <option value="multiply">✖️ Multiplication</option>
+    <option value="divide">➗ Division</option>
+    <option value="mod">🧮 Modulus</option>
+    <option value="power">🔼 Power</option>
+  </select>
+
+  <button class="calc-btn" (click)="calculate()">Calculate</button>
+
+  <div class="result" *ngIf="result !== null">Result: {{ result }}</div>
+
+  <div class="history-actions" *ngIf="history.length > 0">
+    <button class="clear-history-btn" (click)="clearHistory()">🗑️ Clear</button>
+  </div>
+
+  <div class="history" *ngIf="history.length > 0">
+    <div class="history-item" *ngFor="let h of history">{{ h }}</div>
+  </div>
+</div>
+
+<!-- calculator-fullstack/frontend-angular/src/app/calculator/calculator.component.ts -->
+<!-- This component handles the calculator logic, including sending requests to the backend and displaying results. -->
+<!-- It uses Angular's HttpClient to make POST requests to the backend API and updates the result based on the response. -->
+<!-- The `calculate` method sends the numbers and selected operation to the backend and updates the result accordingly. -->
+<!-- The component also handles errors by displaying an error message if the request fails. -->

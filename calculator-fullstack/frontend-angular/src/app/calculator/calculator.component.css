@@ -1,0 +1,208 @@
+/* === Calculator Container === */
+.calc-container {
+  max-width: 440px;
+  margin: 40px auto;
+  padding: 2rem;
+  border-radius: 20px;
+  background: linear-gradient(to bottom right, #ffffff, #f0f9ff);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  font-family: 'Nunito', sans-serif;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.calc-container.dark {
+  background: linear-gradient(to bottom right, #2c3e50, #34495e);
+  color: #ecf0f1;
+}
+
+/* === Title === */
+.calc-container h2 {
+  text-align: center;
+  font-size: 28px;
+  margin: 10px 0 24px;
+  font-weight: 700;
+}
+
+/* === Dark Mode Toggle (Compact) === */
+.dark-toggle {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 10px;
+  font-size: 14px;
+  background-color: #eee;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dark-toggle:hover {
+  background-color: #ccc;
+}
+
+.calc-container.dark .dark-toggle {
+  background-color: #555;
+  color: #fff;
+}
+
+/* === Inputs and Select === */
+.calc-container input,
+.calc-container select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.calc-container.dark input,
+.calc-container.dark select {
+  background-color: #2f4f4f;
+  color: #ecf0f1;
+  border-color: #555;
+}
+
+.calc-container input:focus,
+.calc-container select:focus {
+  border-color: #1e88e5;
+  box-shadow: 0 0 6px rgba(30, 136, 229, 0.3);
+  outline: none;
+}
+
+/* === Calculate Button === */
+.calc-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to right, #1e88e5, #42a5f5);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(66, 165, 245, 0.3);
+  transition: 0.3s ease;
+}
+
+.calc-btn:hover {
+  background: linear-gradient(to right, #1565c0, #1e88e5);
+  transform: translateY(-2px);
+}
+
+/* === Result Box === */
+.result {
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+  background-color: #e3f2fd;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  animation: fadeInResult 0.5s forwards ease-in-out;
+}
+
+@keyframes fadeInResult {
+  to {
+    opacity: 1;
+  }
+}
+
+.calc-container.dark .result {
+  background-color: #3e4e5e;
+  color: #ffffff;
+}
+
+/* === History Section === */
+.history-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+}
+
+/* === Clear Button (Compact) === */
+.clear-history-btn {
+  /* padding: 8px 12px; */
+  padding: 4px 8px;
+  /* font-size: 14px; */
+  font-size: 10px;
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.clear-history-btn:hover {
+  background-color: #c62828;
+}
+
+.calc-container.dark .clear-history-btn {
+  background-color: #b71c1c;
+}
+
+/* === History Box === */
+.history {
+  max-height: 160px;
+  overflow-y: auto;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.calc-container.dark .history {
+  background-color: #2b3b4b;
+}
+
+.history-item {
+  padding: 8px 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+/* === Scrollbar Styling === */
+.history::-webkit-scrollbar {
+  width: 6px;
+}
+
+.history::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.calc-container.dark .history::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+/* === Responsive Support === */
+@media (max-width: 480px) {
+  .calc-container {
+    padding: 1.5rem;
+    margin: 20px;
+  }
+
+  .calc-container h2 {
+    font-size: 22px;
+  }
+
+  .calc-btn,
+  .clear-history-btn {
+    font-size: 16px;
+  }
+
+  .dark-toggle {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+}
