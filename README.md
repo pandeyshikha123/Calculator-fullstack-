@@ -5,7 +5,7 @@ This is a full-stack calculator application built with:
 - ⚙️ **Node.js + Express** backend
 - 🧾 **Java** for core calculation logic
 - 🌐 **Angular** frontend (in `frontend-angular`)
-- 🧠 A custom reusable **NPM package**: [`text-summary-generator-shikha`](https://www.npmjs.com/package/text-summary-generator-shikha)
+- 🧠 A custom reusable **NPM package**: [`text-summary-generator`](https://www.npmjs.com/package/text-summary-generator)
 
 ✅ Project Overview
 A fullstack calculator that:
